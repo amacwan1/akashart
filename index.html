@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore luxury, home-made paintings, with a modern blog and gallery.">
+  <meta name="keywords" content="Contemporary art, Art blog, Paintings, Home gallery, Modern artist">
+  <meta name="author" content="Akash Art">
+  <title>Akash Art</title>
+  <style>
+.slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+  max-height: 500px;
+}
+
+.slides {
+  display: flex;
+  width: 500%;
+  animation: slide 20s infinite;
+}
+
+.slides img {
+  width: 20%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  20%  { transform: translateX(0%); }
+  25%  { transform: translateX(-20%); }
+  45%  { transform: translateX(-20%); }
+  50%  { transform: translateX(-40%); }
+  70%  { transform: translateX(-40%); }
+  75%  { transform: translateX(-60%); }
+  95%  { transform: translateX(-60%); }
+  100% { transform: translateX(-80%); }
+}
+    :root {
+      --dark-charcoal: #2b2a33;
+      --rich-gold: #c9a66b;
+      --soft-grey: #f8f8f8;
+      --highlight-pink: #d17f9f;
+      --accent-blue: #6b89c9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--soft-grey);
+      color: var(--dark-charcoal);
+    }
+    header {
+      background: linear-gradient(135deg, var(--rich-gold), var(--highlight-pink));
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.3rem 0.6rem;
+    }
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    main { padding: 2rem; }
+    .page { display: none; }
+    .active { display: block; animation: fadeIn 0.4s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    h2 { color: var(--accent-blue); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      background: white;
+      padding: 1rem;
+      border-left: 5px solid var(--highlight-pink);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border: 4px solid var(--highlight-pink);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    form.contact-form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      padding: 0.7rem 1.5rem;
+      background: var(--rich-gold);
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    form button:hover {
+      background: var(--highlight-pink);
+    }
+
+    footer {
+      background: var(--dark-charcoal);
+      color: #ddd;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      nav.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Akash Art</h1>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+    <nav id="mainNav" aria-label="Main Navigation">
+      <a href="#" data-target="home">Home</a>
+      <a href="#" data-target="about">About</a>
+      <a href="#" data-target="gallery">Gallery</a>
+      <a href="#" data-target="blog">Blog</a>
+      <a href="#" data-target="contact">Contact</a>
+      <a href="#" data-target="disclaimer">Disclaimer</a>
+    </nav>
+  </header>
+<div class="slider">
+  <div class="slides">
+    <img src="https://wallpapers.com/images/hd/1920-x-1080-nature-desktop-zt65xx09vu42vnfu.jpg" alt="Painting 1">
+    <img src="https://c4.wallpaperflare.com/wallpaper/379/650/373/4k-desktop-background-hd-wallpaper-preview.jpg" alt="Painting 2">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTinroP6BusYD94LKHeD0bDlKj0ZuAzXcCCMM3_lXSnMrSM1X5DlNmuqe_SEO1fbWVQMTY&usqp=CAU" alt="Painting 3">
+    <img src="https://c4.wallpaperflare.com/wallpaper/379/650/373/4k-desktop-background-hd-wallpaper-preview.jpg" alt="Painting 4">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTinroP6BusYD94LKHeD0bDlKj0ZuAzXcCCMM3_lXSnMrSM1X5DlNmuqe_SEO1fbWVQMTY&usqp=CAU" alt="Painting 5">
+  </div>
+</div>
+
+  <main>
+    <section id="home" class="page active">
+      <h2>Welcome</h2>
+      <p>Explore vibrant, home-made contemporary artworks. Each piece is crafted with emotion, luxury, and modern appeal. View our gallery or explore our blog below.</p>
+      <h2>Featured Blog Posts</h2>
+      <div class="grid">
+        <a class="blog-card" href="blog/blog1.html" target="_blank">
+          <h3>How I Started Painting at Home</h3>
+          <p>Turning a small space into a dream art studio...</p>
+        </a>
+        <a class="blog-card" href="https://example.com/post2" target="_blank">
+          <h3>Choosing the Right Colors for Emotive Art</h3>
+          <p>Use of palette to evoke emotion and presence...</p>
+        </a>
+        <a class="blog-card" href="https://example.com/post3" target="_blank">
+          <h3>Top 5 Textures in Acrylic Paintings</h3>
+          <p>Layering techniques that transform visual impact...</p>
+        </a>
+        <a class="blog-card" href="https://example.com/post4" target="_blank">
+          <h3>Packaging Artworks for Delivery</h3>
+          <p>Best practices to ensure safe and stylish shipping...</p>
+        </a>
+        <a class="blog-card" href="https://example.com/post5" target="_blank">
+          <h3>2025 Art Trends to Watch</h3>
+          <p>Minimalism, surrealism, and luxe materials...</p>
+        </a>
+        <a class="blog-card" href="https://example.com/post6" target="_blank">
+          <h3>Pricing Handmade Art Confidently</h3>
+          <p>Break the fear of undervaluing your work...</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="about" class="page">
+      <h2>About the Artist</h2>
+      <p>I’m a self-taught artist working from home, using color, texture, and emotion to shape contemporary artworks. My pieces speak of freedom, chaos, and calm—all in one stroke.</p>
+    </section>
+
+    <section id="gallery" class="page">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="https://via.placeholder.com/400x300?text=Painting+1" alt="Painting 1" />
+        <img src="https://via.placeholder.com/400x300?text=Painting+2" alt="Painting 2" />
+        <img src="https://via.placeholder.com/400x300?text=Painting+3" alt="Painting 3" />
+        <img src="https://via.placeholder.com/400x300?text=Painting+4" alt="Painting 4" />
+      </div>
+    </section>
+
+    <section id="blog" class="page">
+      <h2>Blog</h2>
+      <div class="grid">
+        <a class="blog-card" href="blog/blog1.html" target="_blank">
+          <h3>How I Started Painting at Home</h3>
+          <p>Turning a small space into a dream art studio...</p>
+        </a>
+        <a class="blog-card" href="https://example.com/post2" target="_blank">
+          <h3>Choosing the Right Colors for Emotive Art</h3>
+          <p>Use of palette to evoke emotion and presence...</p>
+        </a>
+        <a class="blog-card" href="https://example.com/post3" target="_blank">
+          <h3>Top 5 Textures in Acrylic Paintings</h3>
+          <p>Layering techniques that transform visual impact...</p>
+        </a>
+        <a class="blog-card" href="https://example.com/post4" target="_blank">
+          <h3>Packaging Artworks for Delivery</h3>
+          <p>Best practices to ensure safe and stylish shipping...</p>
+        </a>
+        <a class="blog-card" href="https://example.com/post5" target="_blank">
+          <h3>2025 Art Trends to Watch</h3>
+          <p>Minimalism, surrealism, and luxe materials...</p>
+        </a>
+        <a class="blog-card" href="https://example.com/post6" target="_blank">
+          <h3>Pricing Handmade Art Confidently</h3>
+          <p>Break the fear of undervaluing your work...</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" class="page">
+      <h2>Contact & Orders</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <section id="disclaimer" class="page">
+      <h2>Disclaimer</h2>
+      <p>Images shown represent styles of original artworks. Each piece is handmade and unique. All purchases imply agreement with shipping and refund policy.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Contemporary Art by You • All rights reserved.
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mainNav').classList.toggle('show');
+    }
+
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const tgt = link.getAttribute('data-target');
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        document.getElementById(tgt).classList.add('active');
+        document.title = tgt.charAt(0).toUpperCase() + tgt.slice(1) + ' • Contemporary Art by You';
+        if (window.innerWidth <= 768) toggleNav();
+      });
+    });
+
+    document.querySelector('.contact-form')?.addEventListener('submit', e => {
+      e.preventDefault();
+      alert('Thanks for your message! I will get back to you soon.');
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
