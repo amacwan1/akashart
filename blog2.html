@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Blog post about art and painting." />
+  <meta name="keywords" content="art blog, painting, creative, home studio" />
+  <meta name="author" content="Contemporary Art by You" />
+  <title>Blog Title Goes Here</title>
+  <style>
+    :root {
+      --dark-charcoal: #2b2a33;
+      --rich-gold: #c9a66b;
+      --soft-grey: #f8f8f8;
+      --highlight-pink: #d17f9f;
+      --accent-blue: #6b89c9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--soft-grey);
+      color: var(--dark-charcoal);
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--rich-gold), var(--highlight-pink));
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.3rem 0.6rem;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-left: 5px solid var(--highlight-pink);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    h2, h3 {
+      color: var(--accent-blue);
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    footer {
+      background: var(--dark-charcoal);
+      color: #ccc;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      nav.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contemporary Art</h1>
+    <div class="nav-toggle" onclick="toggleNav()">☰</div>
+    <nav id="mainNav">
+      <a href="file:///C:/Users/PRATIKSHA/OneDrive/Desktop/Akash%20Art/index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#gallery">Gallery</a>
+      <a href="index.html#blog">Blog</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="index.html#disclaimer">Disclaimer</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Blog Title Goes Here</h2>
+    <p><strong>Published on:</strong> June 12, 2025</p>
+
+    <p>This is where your blog content goes. You can write full-length articles, include images, and structure your post using headings, paragraphs, and lists.</p>
+
+    <h3>Subheading Example</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin in lacinia libero.</p>
+
+    <img src="https://via.placeholder.com/800x400?text=Painting+In+Progress" alt="Painting in Progress" />
+
+    <p>Finish up your post with a reflection, a tip, or a question for readers.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 Contemporary Art by You • All rights reserved.
+  </footer>
+
+  <script>
+    function toggleNav() {
+      document.getElementById('mainNav').classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
