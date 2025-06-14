@@ -5,9 +5,183 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Explore luxury, home-made paintings, with a modern blog and gallery.">
   <meta name="keywords" content="Contemporary art, Art blog, Paintings, Home gallery, Modern artist">
-  <link rel="stylesheet" href="style.css">
   <meta name="author" content="Akash Art">
   <title>Akash Art</title>
+  <style>
+    .slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 2rem;
+  max-height: 500px;
+}
+
+.slides {
+  display: flex;
+  width: 500%;
+  animation: slide 20s infinite;
+}
+
+.slides img {
+  width: 20%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  20%  { transform: translateX(0%); }
+  25%  { transform: translateX(-20%); }
+  45%  { transform: translateX(-20%); }
+  50%  { transform: translateX(-40%); }
+  70%  { transform: translateX(-40%); }
+  75%  { transform: translateX(-60%); }
+  95%  { transform: translateX(-60%); }
+  100% { transform: translateX(-80%); }
+}
+    :root {
+      --dark-charcoal: #2b2a33;
+      --rich-gold: #c9a66b;
+      --soft-grey: #f8f8f8;
+      --highlight-pink: #d17f9f;
+      --accent-blue: #6b89c9;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: var(--soft-grey);
+      color: var(--dark-charcoal);
+    }
+    header {
+      background: linear-gradient(135deg, var(--rich-gold), var(--highlight-pink));
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.3rem 0.6rem;
+    }
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    main { padding: 2rem; }
+    .page { display: none; }
+    .active { display: block; animation: fadeIn 0.4s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    h2 { color: var(--accent-blue); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .blog-card {
+      background: white;
+      padding: 1rem;
+      border-left: 5px solid var(--highlight-pink);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border: 4px solid var(--highlight-pink);
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    form.contact-form {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    form button {
+      padding: 0.7rem 1.5rem;
+      background: var(--rich-gold);
+      border: none;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    form button:hover {
+      background: var(--highlight-pink);
+    }
+
+    footer {
+      background: var(--dark-charcoal);
+      color: #ddd;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      nav.show {
+        display: flex;
+      }
+    }
+
+    </style>
   </head>
 <body>
   <header>
