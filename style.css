@@ -170,10 +170,3 @@
         display: flex;
       }
     }
-logo{
-  font-family: "Segoe UI";
-  border: grey 1px solid;
-  border-radius: 50%;
-  background: var(--rich-gold);
-  text-decoration: none;
-}
